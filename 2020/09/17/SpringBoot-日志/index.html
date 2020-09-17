@@ -1,203 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-
-  
-  <title>SpringBoot 日志 | 不为人知</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SpringBoot 日志1.移除默认日志123456&lt;exclusions&gt;	&lt;exclusion&gt;		&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;		&lt;artifactId&gt;spring-boot-starter-logging&lt;&#x2F;artifactId&gt;	&lt;&#x2F;exclusio">
-<meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot 日志">
-<meta property="og:url" content="https://kingsirs.github.io/myHexo/2020/09/17/SpringBoot-%E6%97%A5%E5%BF%97/index.html">
-<meta property="og:site_name" content="不为人知">
-<meta property="og:description" content="SpringBoot 日志1.移除默认日志123456&lt;exclusions&gt;	&lt;exclusion&gt;		&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;		&lt;artifactId&gt;spring-boot-starter-logging&lt;&#x2F;artifactId&gt;	&lt;&#x2F;exclusio">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-09-17T08:33:55.000Z">
-<meta property="article:modified_time" content="2020-09-17T08:39:33.786Z">
-<meta property="article:author" content="king">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/myHexo/atom.xml" title="不为人知" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/myHexo/css/style.css">
-
-<meta name="generator" content="Hexo 5.1.1"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/myHexo/" id="logo">不为人知</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/myHexo/">Home</a>
-        
-          <a class="main-nav-link" href="/myHexo/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/myHexo/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kingsirs.github.io/myHexo"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-SpringBoot-日志" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/myHexo/2020/09/17/SpringBoot-%E6%97%A5%E5%BF%97/" class="article-date">
-  <time datetime="2020-09-17T08:33:55.000Z" itemprop="datePublished">2020-09-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      SpringBoot 日志
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="SpringBoot-日志"><a href="#SpringBoot-日志" class="headerlink" title="SpringBoot 日志"></a>SpringBoot 日志</h2><h3 id="1-移除默认日志"><a href="#1-移除默认日志" class="headerlink" title="1.移除默认日志"></a>1.移除默认日志</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-添加日志框架依赖"><a href="#2-添加日志框架依赖" class="headerlink" title="2.添加日志框架依赖"></a>2.添加日志框架依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--引入日志依赖 抽象层 与 实现层--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.7.21<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-log4j12<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.7.21<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-创建log4j-properties并且放到资源文件目录src-main-resources"><a href="#3-创建log4j-properties并且放到资源文件目录src-main-resources" class="headerlink" title="3.创建log4j.properties并且放到资源文件目录src/main/resources"></a>3.创建log4j.properties并且放到资源文件目录src/main/resources</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">log4j.rootLogger&#x3D;DEBUG,stdout,file</span><br><span class="line">log4j.additivity.org.apache&#x3D;true</span><br><span class="line"></span><br><span class="line">log4j.appender.stdout&#x3D;org.apache.log4j.ConsoleAppender</span><br><span class="line">log4j.appender.stdout.threshold&#x3D;INFO</span><br><span class="line">log4j.appender.stdout.layout&#x3D;org.apache.log4j.PatternLayout</span><br><span class="line">log4j.appender.stdout.layout.ConversionPattern&#x3D;%-5p %c&#123;1&#125;:%L - %m%n</span><br><span class="line"></span><br><span class="line">log4j.appender.file&#x3D;org.apache.log4j.DailyRollingFileAppender</span><br><span class="line">log4j.appender.file.layout&#x3D;org.apache.log4j.PatternLayout</span><br><span class="line">log4j.appender.file.DatePattern&#x3D;&#39;.&#39;yyyy-MM-dd-HH-mm</span><br><span class="line">log4j.appender.file.layout.ConversionPattern&#x3D;%d&#123;yyyy-MM-dd HH:mm:ss&#125; %-5p %c&#123;1&#125;:%L - %m%n</span><br><span class="line">log4j.appender.file.Threshold&#x3D;INFO</span><br><span class="line">log4j.appender.file.append&#x3D;true</span><br><span class="line">log4j.appender.file.File&#x3D;&#x2F;workspaces&#x2F;logs&#x2F;foodie-api&#x2F;mylog.log</span><br></pre></td></tr></table></figure>
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kingsirs.github.io/myHexo/2020/09/17/SpringBoot-%E6%97%A5%E5%BF%97/" data-id="ckf6kgv800000vkuped2g4332" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/myHexo/2020/09/17/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-  
-</article>
+{% block page_class %}page-post-detail{% endblock %}
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
-  
-    
+{% block content %}
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/myHexo/archives/2020/09/">九月 2020</a></li></ul>
+  <div id="posts" class="posts-expand">
+    {{ post_template.render(page) }}
+
+    <div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
     </div>
   </div>
 
+{% endblock %}
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/myHexo/2020/09/17/SpringBoot-%E6%97%A5%E5%BF%97/">SpringBoot 日志</a>
-          </li>
-        
-          <li>
-            <a href="/myHexo/2020/09/17/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 king<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/myHexo/" class="mobile-nav-link">Home</a>
-  
-    <a href="/myHexo/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/myHexo/js/jquery.min.js"></script>
-
-
-
-  
-<link rel="stylesheet" href="/myHexo/fancybox/jquery.fancybox.css">
-
-  
-<script src="/myHexo/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/myHexo/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+{% block script_extra %}
+  {% include '_scripts/pages/post-details.swig' %}
+{% endblock %}
